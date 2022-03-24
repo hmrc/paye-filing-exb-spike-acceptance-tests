@@ -20,6 +20,8 @@ libraryDependencies ++= Seq(
   "uk.gov.hmrc"                %% "webdriver-factory"       % "0.25.0"   % "test",
   "org.scalatest"              %% "scalatest"               % "3.2.10" % "test",
   "org.pegdown"                %  "pegdown"                 % "1.4.2" % "test",
-  "com.typesafe"               %  "config"                  % "1.3.2"
+  "com.typesafe"               %  "config"                  % "1.3.2",
+  "org.scalatestplus"          %% "selenium-3-141"          % "3.2.10.0" % "test",
+  "com.vladsch.flexmark"       % "flexmark-all"             % "0.62.2"
   )
 
