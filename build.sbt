@@ -4,7 +4,7 @@ import Keys._
 
 name := "paye-filing-exb-spike-acceptance-tests"
 
-version := "0.0.1-SNAPSHOT"
+version := "0.2.0"
 
 scalaVersion := "2.12.12"
 
@@ -24,4 +24,3 @@ libraryDependencies ++= Seq(
   "org.scalatestplus"          %% "selenium-3-141"          % "3.2.10.0" % "test",
   "com.vladsch.flexmark"       % "flexmark-all"             % "0.62.2"
   )
-

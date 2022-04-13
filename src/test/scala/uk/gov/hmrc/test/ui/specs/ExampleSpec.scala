@@ -4,6 +4,8 @@ import uk.gov.hmrc.test.ui.pages.{ExamplePage, PayOnlinePage}
 import uk.gov.hmrc.test.ui.spec.BaseSpec
 import uk.gov.hmrc.test.ui.specs.tags.ZapTests
 
+import scala.xml.NodeSeq.Empty.text
+
 class ExampleSpec extends BaseSpec {
 
   info("Example Spec using ScalaTest")
@@ -19,18 +21,20 @@ class ExampleSpec extends BaseSpec {
       ExamplePage.login(PayOnlinePage.url)
 
       eventually {
-        pageTitle shouldBe PayOnlinePage.title
+     pageTitle shouldBe PayOnlinePage.title
       }
 
       When("User chooses to pay VAT tax")
-      click on radioButton("vat")
+      click on radioButton("tax_to_pay-2")
       click on "next"
       eventually {
-        pageTitle shouldBe "Choose a way to pay - Pay HMRC - GOV.UK"
+        pageTitle shouldBe "What is your VAT registration number? - Pay your VAT - GOV.UK"
       }
 
-      Then("Choose a way to pay page is displayed")
-      tagName("h1").element.text shouldBe "Choose a way to pay"
+      Then("User enter the VAT registration number")
+      text.equals("123456781")
+      click on "next"
+      tagName("h1").element.text shouldBe "What is your VAT registration number?"
     }
   }
 }
