@@ -21,14 +21,15 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 object ExamplePage extends BasePage {
 
   val url: String = TestConfiguration.url("auth-login-stub") + "/gg-sign-in"
+  val newRedirect: String = TestConfiguration.url("auth-login-stub") + "/pay"
   val title = "Authority Wizard"
 
   def login(redirectionUrl: String)(implicit driver: WebDriver): Unit = {
     textField("redirectionUrl").value = redirectionUrl
-    singleSel("confidenceLevel").value = "100"
+    singleSel("confidenceLevel").value = "200"
     singleSel("affinityGroup").value = "Individual"
     textField("nino").value = "MA000003A"
-    click on CssSelectorQuery(".button")
+    click on CssSelectorQuery(".govuk-button")
   }
 }
 
